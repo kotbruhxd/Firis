@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "plugin": "net.irisshaders.firis.compat.indium.mixin.FirisIndiumCompatMixinPlugin",
+  "package": "net.irisshaders.firis.compat.indium.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinAbstractBlockRenderContext"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

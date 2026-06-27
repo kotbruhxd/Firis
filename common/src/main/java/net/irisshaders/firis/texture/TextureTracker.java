@@ -1,0 +1,60 @@
+package net.irisshaders.firis.texture;
+
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.irisshaders.firis.Firis;
+import net.irisshaders.firis.gl.FirisRenderSystem;
+import net.irisshaders.firis.gl.state.StateUpdateNotifiers;
+import net.irisshaders.firis.gl.texture.TextureType;
+import net.irisshaders.firis.pipeline.WorldRenderingPipeline;
+import net.minecraft.client.renderer.texture.AbstractTexture;
+import org.jetbrains.annotations.Nullable;
+
+public class TextureTracker {
+	public static final TextureTracker INSTANCE = new TextureTracker();
+
+	private static Runnable bindTextureListener;
+
+	static {
+		StateUpdateNotifiers.bindTextureNotifier = listener -> bindTextureListener = listener;
+	}
+
+	private final Int2ObjectMap<AbstractTexture> textures = new Int2ObjectOpenHashMap<>();
+
+	private boolean lockBindCallback;
+
+	private TextureTracker() {
+	}
+
+	public void trackTexture(int id, AbstractTexture texture) {
+		textures.put(id, texture);
+	}
+
+	@Nullable
+	public AbstractTexture getTexture(int id) {
+		return textures.get(id);
+	}
+
+	public void onSetShaderTexture(int unit, int id) {
+		if (lockBindCallback) {
+			return;
+		}
+		if (unit == 0) {
+			lockBindCallback = true;
+			if (bindTextureListener != null) {
+				bindTextureListener.run();
+			}
+			WorldRenderingPipeline pipeline = Firis.getPipelineManager().getPipelineNullable();
+			if (pipeline != null) {
+				pipeline.onSetShaderTexture(id);
+			}
+			// Reset texture state
+			FirisRenderSystem.bindTextureToUnit(TextureType.TEXTURE_2D.getGlType(), 0, id);
+			lockBindCallback = false;
+		}
+	}
+
+	public void onDeleteTexture(int id) {
+		textures.remove(id);
+	}
+}

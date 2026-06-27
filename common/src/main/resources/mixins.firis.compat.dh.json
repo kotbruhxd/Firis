@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "plugin": "net.irisshaders.firis.compat.dh.DHMixinConfigPlugin",
+  "package": "net.irisshaders.firis.compat.dh.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinAdvancedShadowCullingFrustum",
+    "MixinBoxCullingFrustum",
+    "MixinCullEverythingFrustum",
+    "MixinNonCullingFrustum"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "refmap": "firis.refmap.json",
+  "package": "net.irisshaders.firis.mixin.integrationtest",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinRenderTarget_StencilBufferTest"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
