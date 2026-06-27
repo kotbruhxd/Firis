@@ -1,12 +1,10 @@
-![Firis: An open-source shaders mod compatible with OptiFine shaderpacks](docs/banner.png)
+![Firis: An open-source shaders mod compatible with OptiFine shaderpacks] (sorry no banner yet)
 
 # Firis
 
 ## Links
-
-* **Visit [our website](https://irisshaders.dev) for downloads and pretty screenshots!**
 * * **Visit [Modrinth](https://modrinth.com/shaders) to find shader packs!**
-* Visit [our Discord server](https://discord.gg/jQJnav2jPu) to chat about the mod and get support! It's also a great place to get development updates right as they're happening.
+* Visit [our Discord server](https://discord.gg/TxqB5Yxtxd) to chat about the mod and get support! It's also a great place to get development updates right as they're happening.
 * Visit [the developer documentation](https://github.com/FirisShaders/Firis/tree/trunk/docs/development) for information on developing, building, and contributing to Firis!
 
 ## FAQ
@@ -16,51 +14,15 @@
 - A list of unfixable limitations in Firis is available [here](docs/usage/limitations.md).
 
 ## Why did you make Firis?
-
-Firis was created to fill a void that I saw in the Minecraft customization and graphical enhancement community: the lack of an open-source shaders mod that would let me load my favorite shader packs on modern versions of the game, while retaining performance and compatibility with modpacks. OptiFine, the current dominant mod for loading shader packs, has restrictive licensing that firmly stands in the way of any sort of tinkering, and is fairly notorious for having compatibility issues with the mods that I like. It's also mutually incompatible with Sodium, the best rendering optimization mod in existence by a large margin. ShadersMod was never updated past 1.12, and it lacks support for many of the many modern popular shaderpacks. So I created Firis, to try and solve these issues, and also address many other longstanding issues with shader packs.
-
-I first and foremost develop Firis to meet my own needs of a performance-oriented shaders mod with good compatibility and potential for tinkering. Firis when paired with Sodium delivers great performance on my machine, finally making it fully possible for me to actually play with shaders instead of just periodically switching them on to take pretty screenshots, then switching them off once I get tired of frame drops. Of course, as it turns out, I'm far from the only person who benefits from the development of Firis, which is why I've decided to release it to the public as an open-source mod.
-
-Canvas is another shaders mod that has already gained some traction. Its big downside for me, however, is the fact that it doesn't support the existing popular OptiFine shaderpacks that I want to use. This is because it uses a new format for shader packs that isn't compatible with the existing format, in order to achieve many of its goals for better mod integration with shaders. And while Canvas now has a few nice shaders like Lumi Lights, I still want to have the option of using existing shader packs that were designed for OptiFine. Shader packs just aren't interchangeable, just like how you cannot hand a copy of *The Last Supper* to someone who wants a copy of the *Mona Lisa*. They're both great pieces of art, but you absolutely cannot just swap one out for the other. That being said, if you're a fan of the shader packs available for Canvas, then great! Canvas and Firis are both perfectly fine ways to enjoy shaders with Minecraft.
-
-## Goals
-
-These are the goals of Firis. Firis hasn't fully achieved all these goals, however we are getting close.
-
-* **Performance.** Firis should fully utilize your graphics card when paired with optimization mods like Sodium.
-* **Correctness.** Firis should try to be as issueless as possible in its implementation.
-* **Mod compatibility.** Firis should make a best effort to be compatible with modded environments.
-* **Backwards compatibility.** All existing ShadersMod / OptiFine shader packs should just work on Firis, without any modifications required.
-* **Features for shader pack developers.** Once Firis has full support for existing features of the shader pipeline and is reasonably bug free, I wish to expand the horizons of what's possible to do with Minecraft shader packs through the addition of new features to the shader pipeline. Unlimited color buffers, direct voxel data access, and fancy debug HUDs are some examples of features that I'd like to add in the future.
-* **A well-organized codebase.** I'd like for working with Firis code to be a pleasant experience overall.
-
-
-## What's the current state of development?
-
-Firis has public releases for 1.18.2, 1.19.2, 1.19.3, and 1.19.4 that work with the official releases of Sodium. Firis is generally usable on most shader packs, and most shader packs are being designed with Firis support in mind.
-
-However, Firis is still not complete software. Performance can be improved, and more features are being added for shader developers. There are also some minor missing features from OptiFine that make the implementation incomplete.
-
-## How can I help?
+idk xD.
 
 * The Firis Discord server is looking for people willing to provide support and moderate the server! Go to #applications on our server if you'd like to apply.
 * Code review on open PRs is appreciated! This helps get important issues with PRs resolved before I give them a look.
 * Code contributions through PRs are also welcome! If you're working on a large / significant feature it's usually a good idea to talk about your plans beforehand, to make sure that work isn't wasted.
 
 ## But where's the Forge version?
-
-Firis doesn't support Forge. This is for a few reasons:
-
-* My time is limited, and properly supporting all the mods available for Forge (as well as Forge itself) is a huge amount of work. When people ask for Forge support, they aren't asking just for Firis to run on Forge, they are also asking for it to be compatible out of the box with their kitchen sink modpack that contains over 300 mods. As a result, properly supporting Forge would require me to divert large amounts of precious time into fixing tedious compatibility issues and bugs, time that could instead be spent making the Fabric version of Firis better.
-* The Forge toolchain isn't really designed to play nice with mods like Firis that need to make many patches to the game code. It's possible, but Fabric & Quilt are just *better* for mods like Firis. It's no coincidence that the emergence of Fabric and the initial emergence of OptiFine replacements happened at around the same time.
-* Sodium, which Firis depends on to achieve its great performance, has no official Forge version. It's a long story, but in short: the lead developers of Forge were incredibly hostile to JellySquid when she developed for Forge, and since then have made no credible attempts to repair relations or even admit wrongdoing.
-
-Some users have already ported Firis to Forge, however these ports generally come with mod compatibility issues and outdated updates.
-The license of Firis does permit others to legally port Firis to Forge, and we are not strictly opposed to the existence of an Firis Forge port created by others. However, what we are opposed to is someone doing a bare-minimum port of Firis to Forge, releasing it to the public, and then abandoning it or poorly maintaining it while compatibility issues and bug reports accumulate. When that happens, not only does that hurt the reputation of Firis, but we also ultimately get flooded by users wanting support with a low-effort Forge port that we didn't even make.
-
-So, if you want to distribute a Forge port of Firis, we'd prefer if you let us know. Please don't just name your port "Firis Forge," "Firis for Forge," or "Firis Forge Port" either. Be original, and don't just hijack our name, unless we've given you permission to use one of those kinds of names. If a well-qualified group of people willing to maintain a Forge port of Firis does appear, then a name like "Firis Forge" might be appropriate - otherwise, it probably isn't appropriate.
-
-## Credits
+wait until i fix this 
+#Credits
 
 * **TheOnlyThing and Vaerian**, for creating the excellent logo
 * **Mumfrey**, for creating the Mixin bytecode patching system used by Firis and Sodium internally
@@ -76,5 +38,3 @@ So, if you want to distribute a Forge port of Firis, we'd prefer if you let us k
 All code in this (Firis) repository is completely free and open source, and you are free to read, distribute, and modify the code as long as you abide by the (fairly reasonable) terms of the [GNU LGPLv3 license](https://github.com/FirisShaders/Firis/blob/master/LICENSE).
 
 glsl-transformer is licensed under the GNU Affero General Public License version 3. This may affect your ability to distribute Firis.
-
-Though it's not legally required, I'd appreciate it if you could ask before hosting your own public downloads for compiled versions of Firis. Though if you want to add the mod to a site like MCBBS, that's fine, no need to ask me.
